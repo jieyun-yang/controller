@@ -3,6 +3,7 @@ controller
 
 A Socket.IO Controller for Impress.js
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 http://youngjacky.com/p/531857c19e1ee55557e52e42
 <<<<<<< HEAD
@@ -327,3 +328,5 @@ Released under the MIT and GPL Licenses.
 >>>>>>> df0ff7bdd68d5e9578308f2544bab5ce9a88d483
 =======
 >>>>>>> 0fd56dce89a6065d6b570a68dec83e01f3a3ad49
+=======
+>>>>>>> 68edd3b27ca0659b45d9db598fe04fcf3d51e93d
