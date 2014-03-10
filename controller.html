@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/foundation.min.css">
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <style>
+            *{
+              margin: 0;
+              padding: 0;
+            }
+            html,body{
+              height: 100%;
+              width: 100%;
+            }
+            .controls-contain{
+              height: 100%;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-box-pack: center;
+              display: -moz-box;
+              -moz-box-orient: vertical;
+              -moz-box-pack: center;
+              display: -o-box;
+              -o-box-orient: vertical;
+              -o-box-pack: center;
+              display: -ms-box;
+              -ms-box-orient: vertical;
+              -ms-box-pack: center;
+              display: box;
+              box-orient: vertical;
+              box-pack: center;
+            }
+            .controls-contain *{
+              text-align: center;
+            }
+            .temp-row{
+              margin-top: 30px;
+            }
+            .button{
+              border-radius: 10px;
+              font-size: 2rem!important;
+            }
+            #left-key{
+              margin-right: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="controls-contain">
+            <div class="row">
+              <div class="small-12 small-centered columns">
+                  <a id="left-key" data-key="37" class="button large"><i class="fa fa-hand-o-left"></i></a>
+                  <a id="right-key" data-key="39" class="button large"><i class="fa fa-hand-o-right"></i></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="small-6 small-centered columns">
+                <a id="overview" data-goto="overview" class="button small success"><i class="fa fa-eye"></i></a>
+              </div>
+            </div>
+        </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+          var socket = io.connect();
+
+          $('#left-key').click(function(event){
+            event.preventDefault();
+            socket.emit('keyLeft');
+          });
+          $('#right-key').click(function(event){
+            event.preventDefault();
+            socket.emit('keyRight');
+          });
+          $('#overview').click(function(event){
+            event.preventDefault();
+            socket.emit('overview');
+          });
+        </script>
+    </body>
+</html>
